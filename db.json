@@ -1,43 +1,11 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "P",
-      "price": 2000,
-      "quantity": 50,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 4,
-      "name": "Cle",
-      "price": 75000,
-      "quantity": 23,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 5,
-      "name": "PC",
-      "price": 2000,
-      "quantity": 50,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 6,
-      "name": "hhh",
-      "price": 75000,
-      "quantity": 23,
-      "selected": false,
-      "available": true
-    },
-    {
       "id": 8,
       "name": "Cle",
       "price": 75000,
       "quantity": 23,
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
@@ -46,14 +14,6 @@
       "price": 2000,
       "quantity": 50,
       "selected": true,
-      "available": true
-    },
-    {
-      "id": 10,
-      "name": "Cle",
-      "price": 75000,
-      "quantity": 23,
-      "selected": false,
       "available": true
     },
     {

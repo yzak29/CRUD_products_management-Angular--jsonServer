@@ -1,0 +1,24 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a (click)="onGetAllProducts()" [ngClass]="currentLink=='all'?'active':''"  class="nav-link clickable" data-bs-toggle="tab" >All</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="onGetSelectedProducts()" [ngClass]="currentLink=='selected'?'active':''"  class="nav-link clickable" data-bs-toggle="tab">Selected</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="onGetAvailableProducts()" [ngClass]="currentLink=='available'?'active':''"  class="nav-link clickable" data-bs-toggle="tab" >Available</a>
+    </li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-info ml-5" routerLink="/AddProduct">Add Product</button>
+    </li>
+    <li class="ml-auto">
+      <a  class="nav-link clickable" [ngClass]="currentLink=='search'?'active':''">
+        <form class="form-inline " #f="ngForm" (ngSubmit)="onGetSearch(f.value)">
+          <input ngModel name="keyword" class="form-control mr-1" type="text" placeholder="Search">
+          <button  class="btn btn-outline-primary " type="submit" > <fa-icon [icon]="faSearch"></fa-icon></button>
+        </form>
+      </a>
+    </li>
+  </ul>
+</div>

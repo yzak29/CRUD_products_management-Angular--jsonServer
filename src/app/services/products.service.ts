@@ -12,7 +12,8 @@ export class ProductsService {
   constructor(private http:HttpClient) { }
 
   getAllProducts() : Observable<ProductModel[]>{
-    let url = (Math.random()>0.2)?environment.HOST:environment.unreachableHost;
+    let url = environment.HOST;
+    //let url = (Math.random()>0.2)?environment.HOST:environment.unreachableHost;
     return this.http.get<ProductModel[]>(url + "/products");
   }
 

@@ -3,8 +3,7 @@ import {ProductsService} from "../../services/products.service";
 import {Observable, of} from "rxjs";
 import {ProductModel} from "../../models/product.model";
 import {catchError, map, startWith} from "rxjs/operators";
-import {AppDataState, DataStateEnum} from "../../state/product.state";
-import {faEdit, faSearchPlus, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import {AppDataState, DataStateEnum, ProductActionsTypes} from "../../state/product.state";
 import {Router, RouterModule} from "@angular/router";
 
 @Component({
@@ -14,12 +13,8 @@ import {Router, RouterModule} from "@angular/router";
 })
 export class ProductsComponent implements OnInit {
 
-  faSearch = faSearchPlus;
-  faTrashAlt = faTrashAlt;
-  faEdit = faEdit;
 
   products$ : Observable<AppDataState<ProductModel[]>> | null=null ;
-  readonly dataStateEnum = DataStateEnum;
   currentLink : any;
 
   constructor(private productsService:ProductsService , private route:Router) { }
@@ -87,5 +82,18 @@ export class ProductsComponent implements OnInit {
 
   onUpdate(p: ProductModel) {
     this.route.navigateByUrl("/editProduct/"+p.id);
+  }
+
+
+  onActionEvent($event: any) {
+    switch ($event.type){
+      case ProductActionsTypes.GET_ALL_PRODUCTS : this.onGetAllProducts() ; break;
+      case ProductActionsTypes.GET_SELECTED_PRODUCTS : this.onGetSelectedProducts() ; break;
+      case ProductActionsTypes.GET_AVAILABLE_PRODUCTS : this.onGetAvailableProducts() ; break;
+      case ProductActionsTypes.SEARCH_PRODUCTS : this.onGetSearch($event.payload) ; break;
+      case ProductActionsTypes.SELECT_PRODUCT : this.onSelect($event.payload) ; break;
+      case ProductActionsTypes.UPDATE_PRODUCT : this.onUpdate($event.payload) ; break;
+      case ProductActionsTypes.DELETE_PRODUCT : this.onDelete($event.payload) ; break;
+    }
   }
 }

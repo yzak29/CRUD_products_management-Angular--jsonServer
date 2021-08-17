@@ -1,0 +1,25 @@
+<tr class="table-active" *ngIf="product">
+  <th>{{product.id}}</th>
+  <td>{{product.name}}</td>
+  <td>{{product.price}}</td>
+  <td>{{product.quantity}}</td>
+  <td>{{product.selected}}</td>
+  <td>{{product.available}}</td>
+  <td>
+    <button (click)="onSelect(product)" [ngClass]="product.selected?'btn-info':'btn-danger'" class="btn btn-sm">
+      <span *ngIf="product.selected">Selected</span>
+      <span *ngIf="!product.selected">Select</span>
+    </button>
+  </td>
+  <td>
+    <button (click)="onDelete(product)" class="btn btn-sm btn-warning" >
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </button>
+  </td>
+  <td>
+    <button (click)="onUpdate(product)" class="btn btn-sm btn-warning" >
+      <fa-icon [icon]="faEdit"></fa-icon>
+    </button>
+  </td>
+
+</tr>
