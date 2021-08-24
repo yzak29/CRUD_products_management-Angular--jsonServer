@@ -3,7 +3,7 @@
     {
       "id": 8,
       "name": "Cle",
-      "price": 75000,
+      "price": 7500,
       "quantity": 23,
       "selected": true,
       "available": true
@@ -14,29 +14,21 @@
       "price": 2000,
       "quantity": 50,
       "selected": true,
-      "available": true
+      "available": false
     },
     {
+      "id": 11,
       "name": "imprimante",
       "price": 15,
-      "quantity": 15,
-      "selected": true,
-      "available": true,
-      "id": 11
-    },
-    {
-      "name": "pc hp",
-      "price": 200,
-      "quantity": 30,
-      "selected": true,
-      "available": true,
-      "id": 15
+      "quantity": 1,
+      "selected": false,
+      "available": true
     },
     {
       "name": "zaka",
       "price": 25,
       "quantity": 25,
-      "selected": true,
+      "selected": false,
       "available": true,
       "id": 16
     }

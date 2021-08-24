@@ -4,7 +4,9 @@
   <td>{{product.price}}</td>
   <td>{{product.quantity}}</td>
   <td>{{product.selected}}</td>
-  <td>{{product.available}}</td>
+  <td>
+    <fa-icon *ngIf="product.available" [icon]="faCheck"></fa-icon>
+  </td>
   <td>
     <button (click)="onSelect(product)" [ngClass]="product.selected?'btn-info':'btn-danger'" class="btn btn-sm">
       <span *ngIf="product.selected">Selected</span>
